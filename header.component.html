@@ -1,0 +1,164 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center">
+            <div class="sidebar-brand-text mx-2">
+                <img src="..\..\..\..\assets/img/LogoCitas.png" width="100%" height="55px" alt="logoCaja" />
+            </div>
+            <img *ngIf="tamano" src="..\..\..\..\assets/img/LogoCitas.png" width="100%" height="40px" alt="logoCaja" />
+        </a>
+
+        <!-- Divider -->
+        <li class="nav-item" *ngIf="perfilAdmi ">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePanel" aria-expanded="true" aria-controls="collapsePanel">
+                <i class="fas fa-calendar"></i>
+                <span>Citas</span>
+            </a>
+            <div id="collapsePanel" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-bandeja py-2 collapse-inner rounded">
+                    <a class="collapse-item" [routerLink]="['/CitasApp/cliente']">Solicitar Cita</a>
+                    <a class="collapse-item" [routerLink]="['/CitasApp/cliente']">Reprogramar Cita</a>
+                    <a class="collapse-item" [routerLink]="['/CitasApp/cliente']">Cancelar Cita</a>
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePanel2" aria-expanded="true" aria-controls="collapsePanel">
+                <i class="fas fa-users"></i>
+                <span>Usuarios</span>
+            </a>
+            <div id="collapsePanel2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-bandeja py-2 collapse-inner rounded">
+                    <a class="collapse-item" [routerLink]="['/CitasApp/cliente']">Perfiles de usuario</a>
+                    <a class="collapse-item" [routerLink]="['/CitasApp/cliente']">Usuarios</a>
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePanel3" aria-expanded="true" aria-controls="collapsePanel">
+                <i class="fas fa-usd"></i>
+                <span>Servicios</span>
+            </a>
+            <div id="collapsePanel3" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-bandeja py-2 collapse-inner rounded">
+                    <a class="collapse-item" [routerLink]="['/CitasApp/cliente']">Consultar Servicios</a>
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePanel4" aria-expanded="true" aria-controls="collapsePanel">
+                <i class="fas fa-user-md"></i>
+                <span>Terapeutas</span>
+            </a>
+            <div id="collapsePanel4" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-bandeja py-2 collapse-inner rounded">
+                    <a class="collapse-item" [routerLink]="['/CitasApp/cliente']">Consultar Terapeutas</a>
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePanel5" aria-expanded="true" aria-controls="collapsePanel">
+                <i class="fas fa-home"></i>
+                <span>Sede</span>
+            </a>
+            <div id="collapsePanel5" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-bandeja py-2 collapse-inner rounded">
+                    <a class="collapse-item" [routerLink]="['/CitasApp/sede']">Consultar Sedes</a>
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePanel6" aria-expanded="true" aria-controls="collapsePanel">
+                <i class="fas fa-briefcase"></i>
+                <span>Profesiones</span>
+            </a>
+            <div id="collapsePanel6" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-bandeja py-2 collapse-inner rounded">
+                    <a class="collapse-item" [routerLink]="['/CitasApp/cliente']">Consultar Profesiones</a>
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePanel7" aria-expanded="true" aria-controls="collapsePanel">
+                <i class="fas fa-cogs"></i>
+                <span>Administración</span>
+            </a>
+            <div id="collapsePanel7" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-bandeja py-2 collapse-inner rounded">
+                    <a class="collapse-item" [routerLink]="['/CitasApp/cliente']">Configurar dias festivos</a>
+                    <a class="collapse-item" [routerLink]="['/CitasApp/cliente']">Configurar indisponibilidad</a>
+                </div>
+            </div>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <!-- <button class="rounded-circle border-0" id="sidebarToggle"></button> -->
+        </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-header topbar mb-4 static-top shadow">
+
+                <!-- Sidebar Toggle (Topbar) -->
+                <button id="sidebarToggleTop" class="btn btn-link " (click)="cerrarMenu()">
+            <i class="fa fa-bars"></i>
+          </button>
+
+                <!-- <button (click)="cerrarMenu()">Cerra</button> -->
+
+
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+
+                    <!-- Nav Item - Alerts -->
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-lg-inline text-gray-600 small ">{{nombreUsuario}} <i class="fas fa-user"></i></span>
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" [routerLink]="['/login']" (click)="logout()" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Cerrar Sesión
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <!-- End of Topbar -->
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<script src="./sb-admin-2.js"></script>
